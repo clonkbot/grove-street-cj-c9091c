@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for the gangster vibe */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Scanline effect overlay */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Flicker effect for that old CRT/VHS feel */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.98; }
+  25%, 75% { opacity: 0.99; }
+}
+
+/* Pulse animation for the glow */
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 30px rgba(34,197,94,0.5)) drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 50px rgba(34,197,94,0.7)) drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+  }
+}
+
+img {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(34, 197, 94, 0.4);
+  color: white;
+}
